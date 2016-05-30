@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset='utf-8'>
+    <meta http-equiv="X-UA-Compatible" content="chrome=1">
+    <link href='https://fonts.googleapis.com/css?family=Chivo:900' rel='stylesheet' type='text/css'>
+    <link rel="stylesheet" type="text/css" href="stylesheets/stylesheet.css" media="screen">
+    <link rel="stylesheet" type="text/css" href="stylesheets/github-dark.css" media="screen">
+    <link rel="stylesheet" type="text/css" href="stylesheets/print.css" media="print">
+    <!--[if lt IE 9]>
+    <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+    <title>ATNavBarButton by apptality</title>
+  </head>
+
+  <body>
+    <div id="container">
+      <div class="inner">
+
+        <header>
+          <h1>ATNavBarButton</h1>
+          <h2>A sub-class of UIBarButtonItem to insert custom buttons or indicatorView into your navigationBar with one line of code.</h2>
+        </header>
+
+        <section id="downloads" class="clearfix">
+          <a href="https://github.com/apptality/ATNavBarButton/zipball/master" id="download-zip" class="button"><span>Download .zip</span></a>
+          <a href="https://github.com/apptality/ATNavBarButton/tarball/master" id="download-tar-gz" class="button"><span>Download .tar.gz</span></a>
+          <a href="https://github.com/apptality/ATNavBarButton" id="view-on-github" class="button"><span>View on GitHub</span></a>
+        </section>
+
+        <hr>
+
+        <section id="main_content">
+          <h1>
+<a id="atnavbarbutton-10" class="anchor" href="#atnavbarbutton-10" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>ATNavBarButton 1.0</h1>
+
+<p>A sub-class of UIBarButtonItem to insert custom buttons or indicatorView into your navigationBar with one line of code.</p>
+
+<h2>
+<a id="features" class="anchor" href="#features" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Features</h2>
+
+<ul>
+<li>One line of code</li>
+<li>One method to handle all button actions</li>
+<li>Change to any button when needed</li>
+<li>Custom indicator view and button colors</li>
+<li>Change or add your own images</li>
+<li>35 Pre-defined FontAwesome icons on all scales</li>
+</ul>
+
+<h2>
+<a id="examples" class="anchor" href="#examples" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Examples</h2>
+
+<p><strong>Default Color:</strong></p>
+
+<p><img src="http://apptality.ae/assets/ATNavBarButton/ATNavBarButton-1.png" alt="ATNavBarButton1"></p>
+
+<div class="highlight highlight-source-objc"><pre>- (<span class="pl-k">void</span>)viewDidLoad
+{
+    [<span class="pl-v">super</span> <span class="pl-c1">viewDidLoad</span>];
+    [<span class="pl-v">self</span>.navigationItem <span class="pl-c1">setLeftBarButtonItem:</span>[ATNavBarButton <span class="pl-c1">setBarButton:</span>ATNavBarButtonUser <span class="pl-c1">withDelegate:</span><span class="pl-v">self</span>]];
+    [<span class="pl-v">self</span>.navigationItem <span class="pl-c1">setRightBarButtonItem:</span>[ATNavBarButton <span class="pl-c1">setBarButton:</span>ATNavBarButtonSettings <span class="pl-c1">withDelegate:</span><span class="pl-v">self</span>]];
+}</pre></div>
+
+<p><strong>Custom color:</strong></p>
+
+<p><img src="http://apptality.ae/assets/ATNavBarButton/ATNavBarButton-2.png" alt="ATNavBarButton2"></p>
+
+<div class="highlight highlight-source-objc"><pre>- (<span class="pl-k">void</span>)viewDidLoad
+{
+    [<span class="pl-v">super</span> <span class="pl-c1">viewDidLoad</span>];
+    [<span class="pl-v">self</span>.navigationItem <span class="pl-c1">setLeftBarButtonItem:</span>[ATNavBarButton <span class="pl-c1">setBarButton:</span>ATNavBarButtonMenu <span class="pl-c1">withColor:</span><span class="pl-c1">UIColorFromRGB</span>(0x5a4d8c) <span class="pl-c1">withDelegate:</span><span class="pl-v">self</span>]];
+    [<span class="pl-v">self</span>.navigationItem <span class="pl-c1">setRightBarButtonItem:</span>[ATNavBarButton <span class="pl-c1">setBarButton:</span>ATNavBarButtonRefresh <span class="pl-c1">withColor:</span>[UIColor <span class="pl-c1">redColor</span>] <span class="pl-c1">withDelegate:</span><span class="pl-v">self</span>]];
+}</pre></div>
+
+<p><strong>Indicator view:</strong></p>
+
+<p><img src="http://apptality.ae/assets/ATNavBarButton/ATNavBarButton-3.png" alt="ATNavBarButton3"></p>
+
+<div class="highlight highlight-source-objc"><pre>- (<span class="pl-k">void</span>)viewDidLoad
+{
+    [<span class="pl-v">super</span> <span class="pl-c1">viewDidLoad</span>];
+    [<span class="pl-v">self</span>.navigationItem <span class="pl-c1">setLeftBarButtonItem:</span>[ATNavBarButton <span class="pl-c1">setBarButton:</span>ATNavBarButtonArrowLeft <span class="pl-c1">withColor:</span><span class="pl-c1">UIColorFromRGB</span>(0x5a4d8c) <span class="pl-c1">withDelegate:</span><span class="pl-v">self</span>]];
+    [<span class="pl-v">self</span> <span class="pl-c1">loadIndicatorView:</span><span class="pl-c1">YES</span>];
+}
+
+- (<span class="pl-k">void</span>)loadIndicatorView:(<span class="pl-k">BOOL</span>)loading
+{
+    <span class="pl-k">if</span> (loading) {
+        [<span class="pl-v">self</span>.navigationItem <span class="pl-c1">setRightBarButtonItem:</span>[ATNavBarButton <span class="pl-c1">setIndicatorButtonWithColor:</span>[UIColor <span class="pl-c1">orangeColor</span>] <span class="pl-c1">withDelegate:</span><span class="pl-v">self</span>]];
+    } <span class="pl-k">else</span> {
+        [<span class="pl-v">self</span>.navigationItem <span class="pl-c1">setRightBarButtonItem:</span>[ATNavBarButton <span class="pl-c1">setBarButton:</span>ATNavBarButtonRefresh <span class="pl-c1">withColor:</span>[UIColor <span class="pl-c1">redColor</span>] <span class="pl-c1">withDelegate:</span><span class="pl-v">self</span>]];
+        <span class="pl-c">// or [self.navigationItem setRightBarButtonItem:nil]; to remove the indicator or button if you don't have a manual refresh button</span>
+    }
+}</pre></div>
+
+<h2>
+<a id="delegate" class="anchor" href="#delegate" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Delegate</h2>
+
+<p>There's only left and right nav buttons, but you can set any button any time. Here is where you handle their actions:</p>
+
+<div class="highlight highlight-source-objc"><pre>- (<span class="pl-k">void</span>)ATNavBarButton:(ATNavBarButton *)barButton didPressBarButton:(ATNavBarButtonPressed)buttonPressed
+{
+    <span class="pl-k">if</span> (buttonPressed == ATNavBarButtonBack) {
+        [<span class="pl-v">self</span>.navigationController <span class="pl-c1">popViewControllerAnimated:</span><span class="pl-c1">YES</span>];
+
+    } <span class="pl-k">else</span> <span class="pl-k">if</span> (buttonPressed == ATNavBarButtonArrowRight) {
+        NextViewController *nextController = [NextViewController <span class="pl-c1">new</span>];
+        [<span class="pl-v">self</span>.navigationController <span class="pl-c1">pushViewController:</span>nextController <span class="pl-c1">animated:</span><span class="pl-c1">YES</span>];
+
+    } <span class="pl-k">else</span> <span class="pl-k">if</span> (buttonPressed == ATNavBarButtonRefresh) {
+        [<span class="pl-v">self</span> <span class="pl-c1">reloadContent</span>];
+
+    } <span class="pl-k">else</span> <span class="pl-k">if</span> (buttonPressed == ATNavBarButtonDownload) {
+        [<span class="pl-v">self</span> <span class="pl-c1">downloadFile:</span><span class="pl-s"><span class="pl-pds">@"</span>http://www.apptality.ae/assets/ATNavBarButton/ATNavBarButton1.png<span class="pl-pds">"</span></span>];
+    }
+}</pre></div>
+
+<h2>
+<a id="installation" class="anchor" href="#installation" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Installation</h2>
+
+<p><strong>Manual:</strong></p>
+
+<ul>
+<li>Copy <code>ATNavBarButton</code> folder into your project</li>
+<li>
+<code>#import "ATNavBarButton.h"</code> in the required class</li>
+<li>Add the protocol: <code>@interface MyViewController : UIViewController &lt;ATNavBarButtonDelegate&gt;</code>
+</li>
+<li>Add the delegate method, <code>ATNavBarButton:didPressBarButton:</code>, like above</li>
+</ul>
+
+<p><strong>CocoaPods:</strong></p>
+
+<ul>
+<li>Coming soon..</li>
+</ul>
+
+<h2>
+<a id="license" class="anchor" href="#license" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>License</h2>
+
+<p>ATAppUpdater is released under the MIT license. See <a href="https://github.com/apptality/ATNavBarButton/blob/master/LICENSE.md">LICENSE</a> for details.</p>
+        </section>
+
+        <footer>
+          ATNavBarButton is maintained by <a href="https://github.com/apptality">apptality</a><br>
+          This page was generated by <a href="https://pages.github.com">GitHub Pages</a>. Tactile theme by <a href="https://twitter.com/jasonlong">Jason Long</a>.
+        </footer>
+
+        
+      </div>
+    </div>
+  </body>
+</html>
