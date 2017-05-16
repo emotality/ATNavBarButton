@@ -1,4 +1,4 @@
-# ATNavBarButton 1.0
+# ATNavBarButton 1.1
 A sub-class of UIBarButtonItem to insert custom buttons or indicatorView into your navigationBar with one line of code.
 
 ## Features
@@ -86,12 +86,15 @@ There's only left and right nav buttons, but you can set any button any time. He
 
 - Copy `ATNavBarButton` folder into your project
 - `#import "ATNavBarButton.h"` in the required class
-- Add the protocol: `@interface MyViewController : UIViewController <ATNavBarButtonDelegate>`
+- Add the `<ATNavBarButtonDelegate>` protocol
 - Add the delegate method, `ATNavBarButton:didPressBarButton:`, like above
 
 **CocoaPods:**
 
-- Coming soon..
+- Add to podfile: `pod 'ATNavBarButton'`
+- `#import "ATNavBarButton.h"` in the required class
+- Add the `<ATNavBarButtonDelegate>` protocol
+- Add the delegate method, `ATNavBarButton:didPressBarButton:`, like above
 
 ## License
 
