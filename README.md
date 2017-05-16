@@ -8,13 +8,13 @@ A sub-class of UIBarButtonItem to insert custom buttons or indicatorView into yo
 - Change to any button when needed
 - Custom indicator view and button colors
 - Change or add your own images
-- 35 Pre-defined FontAwesome icons on all scales
+- 35 Pre-defined FontAwesome icons on all 3 scales
 
 ## Examples
 
 **Default Color:**
 
-![ATNavBarButton1](http://apptality.ae/assets/ATNavBarButton/ATNavBarButton-1.png)
+![ATNavBarButton1](https://www.emotality.com/development/GitHub/ATNavBarButton-1.png)
 ````objc
 - (void)viewDidLoad
 {
@@ -26,7 +26,7 @@ A sub-class of UIBarButtonItem to insert custom buttons or indicatorView into yo
 
 **Custom color:**
 
-![ATNavBarButton2](http://apptality.ae/assets/ATNavBarButton/ATNavBarButton-2.png)
+![ATNavBarButton2](https://www.emotality.com/development/GitHub/ATNavBarButton-2.png)
 ````objc
 - (void)viewDidLoad
 {
@@ -38,7 +38,7 @@ A sub-class of UIBarButtonItem to insert custom buttons or indicatorView into yo
 
 **Indicator view:**
 
-![ATNavBarButton3](http://apptality.ae/assets/ATNavBarButton/ATNavBarButton-3.png)
+![ATNavBarButton3](https://www.emotality.com/development/GitHub/ATNavBarButton-3.png)
 ````objc
 - (void)viewDidLoad
 {
@@ -75,7 +75,7 @@ There's only left and right nav buttons, but you can set any button any time. He
         [self reloadContent];
         
     } else if (buttonPressed == ATNavBarButtonDownload) {
-        [self downloadFile:@"http://www.apptality.ae/assets/ATNavBarButton/ATNavBarButton1.png"];
+        [self downloadFile:@"https://www.emotality.com/development/GitHub/ATNavBarButton-1.png"];
     }
 }
 ````
@@ -95,4 +95,4 @@ There's only left and right nav buttons, but you can set any button any time. He
 
 ## License
 
-ATAppUpdater is released under the MIT license. See [LICENSE](https://github.com/apptality/ATNavBarButton/blob/master/LICENSE.md) for details.
+ATAppUpdater is released under the MIT license. See [LICENSE](https://github.com/emotality/ATNavBarButton/blob/master/LICENSE.md) for details.
